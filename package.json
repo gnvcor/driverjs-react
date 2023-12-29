@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "git@github.com:gnvcor/driverjs-react.git",
   "author": "gnvcor <nikita.kolibri@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
