@@ -7,7 +7,7 @@ type DriverContextType = {
 
 const initDriverContext: DriverContextType = {}
 
-const DriverContext = createContext(initDriverContext)
+export const DriverContext = createContext(initDriverContext)
 
 type DriverProviderType = {
     children: ReactNode
