@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { DriverContext } from '../driverProvider/DriverProvider';
+import { DriverContext } from '../providers/DriverProvider';
 
 export const useDriver = () => {
     const { driver } = useContext(DriverContext);
