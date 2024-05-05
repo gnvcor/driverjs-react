@@ -11,7 +11,7 @@ export const DriverContext = createContext(initDriverContext)
 
 type DriverProviderType = {
     children: ReactNode;
-    driverProps: DriverConfigType;
+    driverProps?: DriverConfigType;
 }
 
 export const DriverProvider:FC<DriverProviderType> = ({ children, driverProps }: DriverProviderType) => {
