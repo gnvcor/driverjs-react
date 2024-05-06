@@ -11,14 +11,14 @@ export const DriverContext = createContext(initDriverContext)
 
 type DriverProviderType = {
     children: ReactNode;
-    driverProps?: DriverConfigType;
+    driverOptions?: DriverConfigType;
 }
 
-export const DriverProvider:FC<DriverProviderType> = ({ children, driverProps }: DriverProviderType) => {
+export const DriverProvider:FC<DriverProviderType> = ({ children, driverOptions = {} }: DriverProviderType) => {
     const [driver, setDriver] = useState<DriverType | undefined>();
 
     useEffect(() => {
-        const driverInstance = Driver(driverProps)
+        const driverInstance = Driver(driverOptions)
 
         setDriver(driverInstance)
     }, [])
