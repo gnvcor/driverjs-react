@@ -2,7 +2,7 @@ import 'driver.js/dist/driver.css'
 import React, { createContext, FC, ReactNode, useEffect, useState } from 'react';
 import {driver as Driver, Driver as DriverType, Config as DriverConfigType} from 'driver.js'
 
-type DriverContextType = {
+export type DriverContextType = {
     driver?: DriverType
 }
 
