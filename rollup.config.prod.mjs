@@ -6,11 +6,18 @@ import postcss from 'rollup-plugin-postcss';
 
 export default {
   input: 'src/index.ts',
-  output: {
-    file: 'dist/bundle.js',
-    format: 'esm',
-    sourcemap: false,
-  },
+  output: [
+    {
+      file: 'dist/index.cjs',
+      format: 'cjs',
+      sourcemap: false,
+    },
+    {
+      file: 'dist/index.mjs',
+      format: 'esm',
+      sourcemap: false,
+    }
+  ],
   plugins: [
     resolve({
       extensions: ['.js', '.ts', '.jsx', '.tsx'],
