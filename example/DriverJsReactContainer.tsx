@@ -4,17 +4,15 @@ import {useDriver} from "../src/hooks/useDriver";
 export const DriverJsReactContainer: FC = () => {
     const { driver } = useDriver()
 
-    useEffect(() => {
-        if (driver) {
-            driver.drive();
-        }
-    }, [driver])
-
     const onShowTour = () => {
         if (driver) {
             driver.drive();
         }
     }
+
+    useEffect(() => {
+        onShowTour()
+    }, [driver])
 
     return <div>
         <button onClick={onShowTour}>Show tour</button>
