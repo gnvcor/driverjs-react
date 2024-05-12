@@ -1,5 +1,5 @@
 import React, {FC, useEffect} from "react";
-import {useDriver} from "../src/hooks/useDriver";
+import {useDriver} from "../src";
 
 export const DriverJsReactContainer: FC = () => {
     const { driver } = useDriver()

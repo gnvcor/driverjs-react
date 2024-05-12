@@ -1,11 +1,11 @@
 import React from "react";
 import { createRoot } from 'react-dom/client';
-import {DriverProvider, DriverProviderType} from "../src/providers/DriverProvider";
 import {DriverJsReactContainer} from "./DriverJsReactContainer";
+import {DriverOptionsType, DriverProvider} from "../src";
 
 const container = document.getElementById('root');
 
-const driverOptions: DriverProviderType['driverOptions'] = {
+const driverOptions: DriverOptionsType = {
     showProgress: true,
     steps: [
         { element: '#tour-example-1', popover: { title: 'Animated Tour Example', description: 'Here is the code example showing animated tour. Let\'s walk you through it.', side: "left", align: 'start' }},
