@@ -15,6 +15,10 @@ export const DriverJsReactContainer: FC = () => {
     }, [driver])
 
     return <div>
+        <div id="tour-example-1">tour-example-1</div>
+        <div id="tour-example-2">tour-example-2</div>
+        <div id="tour-example-3">tour-example-3</div>
+        <div id="tour-example-4">tour-example-4</div>
         <button onClick={onShowTour}>Show tour</button>
     </div>
 }
