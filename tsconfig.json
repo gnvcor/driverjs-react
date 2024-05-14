@@ -19,5 +19,5 @@
     "outDir": "./dist",
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },
-  "include": ["src", "example"]
+  "include": ["src", "example", "__test__"]
 }
