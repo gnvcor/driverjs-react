@@ -35,8 +35,6 @@ test('Show tour step 3', async () => {
   expect(await screen.findByText(/Title Tour Example 3/i)).toBeInTheDocument();
   expect(await screen.findByText(/Description Tour Example 3/i)).toBeInTheDocument();
   expect(await screen.findByText(/3 of 4/i)).toBeInTheDocument();
-
-  screen.debug(undefined, 1000000);
 });
 
 test('Show tour step 4', async () => {
