@@ -1,10 +1,9 @@
 # Driver.js React
+[Driver.js](https://github.com/kamranahmedse/driver.js) library port for React.
 
 <h1 align="center">
-    <img src="./public/driverjs-react-updated.svg" />
+    <img src="./public/driverjs-react.png" />
 </h1>
-
-[Driver.js](https://github.com/kamranahmedse/driver.js) library port for React.
 
 # Getting Started
 
