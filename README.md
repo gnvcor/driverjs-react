@@ -1,8 +1,9 @@
+# Driver.js React
+
 <h1 align="center">
-    <img width="400" src="./public/driverjs-react.svg" />
+    <img src="./public/driverjs-react-updated.svg" />
 </h1>
 
-# Driver.js React
 [Driver.js](https://github.com/kamranahmedse/driver.js) library port for React.
 
 # Getting Started
@@ -88,4 +89,4 @@ export const DriverJsReactContainer: FC = () => {
 ```
 # Documentation
 
-For demos and documentation, visit [driverjs.com](https://driverjs.com/)
+For demos and documentation, visit [driverjs.com](https://driverjs.com/).
