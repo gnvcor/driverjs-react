@@ -1,3 +1,4 @@
+import 'driver.js/dist/driver.css';
 import React, {
   createContext, FC, ReactNode, useEffect, useState
 } from 'react';
