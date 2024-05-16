@@ -30,10 +30,6 @@ import { createRoot } from 'react-dom/client';
 import { DriverProvider, DriverOptionsType } from 'driverjs-react';
 import { DriverJsReactContainer } from './DriverJsReactContainer';
 
-const container = document.getElementById('root');
-
-import { DriverOptionsType } from '../src';
-
 export const driverOptions: DriverOptionsType = {
   showProgress: true,
   allowClose: false,
@@ -45,6 +41,7 @@ export const driverOptions: DriverOptionsType = {
   ],
 };
 
+const container = document.getElementById('root');
 
 if (container) {
   const root = createRoot(container);
