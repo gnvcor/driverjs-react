@@ -2,32 +2,33 @@ import 'driver.js/dist/driver.css';
 import React, {
   createContext, FC, ReactNode, useEffect, useState
 } from 'react';
-import { driver as Driver, Driver as DriverType, Config as DriverConfigType } from 'driver.js';
+import { driver, Driver, Config } from 'driver.js';
 
-export type DriverContextType = {
+export type DriverType = Driver;
+export type DriverOptionsType = Config;
+
+type DriverContextType = {
   driver?: DriverType
+};
+
+type DriverProviderType = {
+  children: ReactNode;
+  driverOptions?: DriverOptionsType;
 };
 
 const initDriverContext: DriverContextType = {};
 
 export const DriverContext = createContext(initDriverContext);
 
-export type DriverProviderType = {
-  children: ReactNode;
-  driverOptions?: DriverConfigType;
-};
-
 export const DriverProvider:FC<DriverProviderType> = ({ children, driverOptions = {} }: DriverProviderType) => {
-  const [driver, setDriver] = useState<DriverType | undefined>();
+  const [driverInstance, setDriverInstance] = useState<DriverType | undefined>();
 
   useEffect(() => {
-    const driverInstance = Driver(driverOptions);
-
-    setDriver(driverInstance);
+    setDriverInstance(driver(driverOptions));
   }, []);
 
   const driverContextValues = {
-    driver
+    driver: driverInstance
   };
 
   return <DriverContext.Provider value={driverContextValues}>{children}</DriverContext.Provider>;
