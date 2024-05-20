@@ -1,6 +1,6 @@
 import 'driver.js/dist/driver.css';
 import React, {
-  createContext, FC, ReactNode, useEffect, useState
+  createContext, FC, ReactNode, useRef
 } from 'react';
 import { driver, Driver, Config } from 'driver.js';
 
@@ -21,14 +21,11 @@ const initDriverContext: DriverContextType = {};
 export const DriverContext = createContext(initDriverContext);
 
 export const DriverProvider:FC<DriverProviderType> = ({ children, driverOptions = {} }: DriverProviderType) => {
-  const [driverInstance, setDriverInstance] = useState<DriverType | undefined>();
-
-  useEffect(() => {
-    setDriverInstance(driver(driverOptions));
-  }, []);
+  const driverInstance = driver(driverOptions);
+  const driverRef = useRef<DriverType | undefined>(driverInstance);
 
   const driverContextValues = {
-    driver: driverInstance
+    driver: driverRef.current
   };
 
   return <DriverContext.Provider value={driverContextValues}>{children}</DriverContext.Provider>;
