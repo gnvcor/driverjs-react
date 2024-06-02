@@ -1,6 +1,6 @@
 import 'driver.js/dist/driver.css';
 import React, {
-  createContext, FC, ReactNode, useEffect, useRef, useState, Dispatch
+  createContext, FC, ReactNode, useEffect, useRef, useState, Dispatch, SetStateAction
 } from 'react';
 import {
   driver, Driver, Config, DriveStep
@@ -12,8 +12,7 @@ export type DriverOptionsType = Config;
 
 export type DriverContextType = {
   driver?: DriverType
-  // TODO: used SetStateAction
-  setSteps: Dispatch<((prevState: DriverStepType[]) => DriverStepType[]) | DriverStepType[]>
+  setSteps: Dispatch<SetStateAction<DriverStepType[]>>
 };
 
 type DriverProviderType = {
