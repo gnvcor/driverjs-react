@@ -30,18 +30,21 @@ export const DriverContext = createContext(initDriverContext);
 export const DriverProvider:FC<DriverProviderType> = ({ children, driverOptions = {} }: DriverProviderType) => {
   const [steps, setSteps] = useState<DriverStepType[]>([]);
 
-  const driverInstance = driver(driverOptions);
-  const driverRef = useRef<DriverType | undefined>(driverInstance);
+  const driverRef = useRef<DriverType | undefined>(driver(driverOptions));
 
   useEffect(() => {
     if (steps.length) {
-      driverInstance.setSteps(steps);
+      const filteredSteps = steps.filter((step) => step);
 
-      driverInstance.drive();
+      driverRef.current?.setSteps(filteredSteps);
+
+      driverRef.current?.drive();
     }
-  }, [steps]);
 
-  console.log('render in provider')
+    return () => {
+      driverRef.current?.destroy();
+    };
+  }, [steps]);
 
   const driverContextValues = {
     driver: driverRef.current,
